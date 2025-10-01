@@ -105,7 +105,7 @@ export default function Certificates() {
       company: 'AKS University',
       credentialId: '',
       period: 'July 2024 – Aug 2025',
-      duration: '1+ year',
+      duration: '1+ year Part-Time',
       location: 'Satna, Madhya Pradesh',
       description: 'Training students in software development and programming concepts, helping them build practical skills.',
       responsibilities: [
