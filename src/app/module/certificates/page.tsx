@@ -127,8 +127,8 @@ export default function Certificates() {
       title: 'Software Development Intern',
       company: 'AKS University, Satna',
       credentialId: 'AKSU|CS|25|36',
-      period: 'Jan 2025 – June 2025',
-      duration: 'On-Site',
+      period: 'Jan 2025 – May 2025',
+      duration: '3 months',
       location: 'Satna, Madhya Pradesh',
       description: 'Assisting in automating CSE department workflows and developing software solutions to streamline academic processes.',
       responsibilities: [
