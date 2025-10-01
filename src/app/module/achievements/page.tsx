@@ -19,11 +19,57 @@ import {
   CheckCircle,
   Target,
   Zap,
-  Heart
+  Heart,
+  LucideIcon
 } from 'lucide-react';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import useDisableInspect from '@/hooks/useDisableInspect';
+
+// Define interfaces
+interface Achievement {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  impact: 'high' | 'medium' | 'low';
+  metrics: string;
+}
+
+interface AppreciationCertificate {
+  id: number;
+  title: string;
+  issuer: string;
+  issueDate: string;
+  description: string;
+  credentialId: string | null;
+  certificateUrl: string;
+  icon: LucideIcon;
+  color: string;
+}
+
+interface InternshipData {
+  id: number;
+  type: string;
+  title: string;
+  company: string;
+  credentialId: string;
+  period: string;
+  duration: string;
+  location: string;
+  description: string;
+  responsibilities: string[];
+  achievements: Achievement[];
+  skills: string[];
+  technologies: string[];
+  icon: LucideIcon;
+  category: string;
+  status: string;
+  color: string;
+  certificateUrl: string;
+  appreciationUrl: string;
+  mentor: string;
+  mentorRole: string;
+}
 
 export default function SoftwareInternAchievement() {
   useDisableInspect();
@@ -33,7 +79,7 @@ export default function SoftwareInternAchievement() {
     setMounted(true);
   }, []);
 
-  const internshipData = {
+  const internshipData: InternshipData = {
     id: 1,
     type: 'experience',
     title: 'Software Development Intern',
@@ -92,7 +138,7 @@ export default function SoftwareInternAchievement() {
     mentorRole: 'Senior Developer & Mentor'
   };
 
-  const appreciationCertificates = [
+  const appreciationCertificates: AppreciationCertificate[] = [
     {
       id: 1,
       title: 'Appreciation Certificate',
@@ -106,10 +152,8 @@ export default function SoftwareInternAchievement() {
     }
   ];
 
-  const handleDownload = (url , title) => {
-    // In a real application, this would download the actual certificate PDF
+  const handleDownload = (url: string, title: string) => {
     console.log(`Downloading ${title}`);
-    // Simulate download
     if (url) {
       const link = document.createElement('a');
       link.href = url;
@@ -120,9 +164,8 @@ export default function SoftwareInternAchievement() {
     }
   };
 
-  const handleViewCertificate = (url) => {
+  const handleViewCertificate = (url: string) => {
     if (url) {
-      // Open certificate in new tab or show modal
       window.open(url, '_blank');
     } else {
       alert('Certificate URL not available');
@@ -313,7 +356,7 @@ export default function SoftwareInternAchievement() {
           </div>
 
           {/* Appreciation Certificates Section */}
-          <div className="mb-12 ">
+          <div className="mb-12">
             <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8 text-center">Recognition & Appreciation</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {appreciationCertificates.map((certificate) => (

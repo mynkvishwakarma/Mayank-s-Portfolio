@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import { 
   MapPin, 
   Phone, 
@@ -14,25 +14,35 @@ import {
 import Footer from '@/components/Footer';
 import useDisableInspect from '@/hooks/useDisableInspect';
 
+// Define interfaces
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+type SubmitStatus = 'success' | 'error' | null;
+
 export default function Contact() {
-    useDisableInspect();
-  const [formData, setFormData] = useState({
+  useDisableInspect();
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     phone: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null);
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
@@ -74,7 +84,7 @@ export default function Contact() {
               Contact Me
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Let's discuss your project or opportunity. I'm always open to new collaborations and interesting conversations.
+              Let&apos;s discuss your project or opportunity. I&apos;m always open to new collaborations and interesting conversations.
             </p>
           </div>
 
@@ -187,7 +197,7 @@ export default function Contact() {
                 <div className="mb-6 p-4 bg-green-100 dark:bg-green-900 border border-green-300 dark:border-green-700 rounded-lg flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
                   <span className="text-green-800 dark:text-green-200">
-                    Message sent successfully! I'll get back to you soon.
+                    Message sent successfully! I&apos;ll get back to you soon.
                   </span>
                 </div>
               )}
@@ -274,7 +284,7 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      rows="6"
+                      rows={6}
                       className="w-full pl-12 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-900 dark:text-white resize-none"
                       placeholder="Tell me about your project or inquiry..."
                     />

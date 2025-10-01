@@ -1,8 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-
-
+import { useState, useEffect, SyntheticEvent } from 'react';
 import { 
   MapPin, 
   Phone, 
@@ -19,10 +17,24 @@ import {
   Award,
   Calendar,
   Users,
-  Target
+  Target,
+  LucideIcon
 } from 'lucide-react';
 import Footer from '@/components/Footer';
 import useDisableInspect from '@/hooks/useDisableInspect';
+
+// Define interfaces
+interface StatItem {
+  number: string;
+  label: string;
+  icon: LucideIcon;
+}
+
+interface ContactInfo {
+  icon: LucideIcon;
+  text: string;
+  link: string | null;
+}
 
 export default function Home() {
   useDisableInspect();
@@ -32,7 +44,7 @@ export default function Home() {
     setMounted(true);
   }, []);
 
-  const stats = [
+  const stats: StatItem[] = [
     {number:'1+ Year', label: 'Instructor/Trainer at AKS University', icon: Award},
     { number: '10+', label: 'Projects Completed', icon: Award },
     { number: '3+', label: 'Years Learning', icon: Calendar },
@@ -40,7 +52,7 @@ export default function Home() {
     { number: '100%', label: 'Dedication', icon: Target }
   ];
 
-  const contactInfo = [
+  const contactInfo: ContactInfo[] = [
     { icon: MapPin, text: 'Arjun Nagar Pateri, Satna (M.P.)', link: null },
     { icon: Phone, text: '+91 7470955491', link: 'tel:+917470955491' },
     { icon: Mail, text: 'mynkvishwakarma@gmail.com', link: 'mailto:mynkvishwakarma@gmail.com' },
@@ -57,7 +69,19 @@ export default function Home() {
   };
 
   const handleContactClick = () => {
-    document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleImageError = (e: SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    target.style.display = 'none';
+    const nextSibling = target.nextSibling as HTMLElement;
+    if (nextSibling) {
+      nextSibling.style.display = 'flex';
+    }
   };
 
   if (!mounted) {
@@ -80,10 +104,7 @@ export default function Home() {
               src="/profile/Mayank.png" 
               alt="Mayank Vishwakarma" 
               className="w-full h-full object-cover"
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'flex';
-              }}
+              onError={handleImageError}
             />
             <div className="hidden items-center justify-center w-full h-full">
               MV
@@ -234,7 +255,7 @@ export default function Home() {
             Ready to Start a Project?
           </h2>
           <p className="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Let's discuss how we can work together to bring your ideas to life.
+            Let&apos;s discuss how we can work together to bring your ideas to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
@@ -254,9 +275,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-    <Footer></Footer>
+      <Footer />
       
-
 
       <style jsx>{`
         @keyframes fade-in {
@@ -272,18 +292,18 @@ export default function Home() {
         .animate-fade-in {
           animation: fade-in 1s ease-out;
         }
-           @keyframes slow-marquee {
-        0% {
-          transform: translateX(0);
+        @keyframes slow-marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
         }
-        100% {
-          transform: translateX(-50%);
+        .animate-slow-marquee {
+          animation: slow-marquee 25s linear infinite;
+          display: inline-block;
         }
-      }
-      .animate-slow-marquee {
-        animation: slow-marquee 25s linear infinite;
-        display: inline-block;
-      }
       `}</style>
     </div>
   );
