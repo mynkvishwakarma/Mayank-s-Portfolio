@@ -85,8 +85,8 @@ export default function SoftwareInternAchievement() {
     title: 'Software Development Intern',
     company: 'AKS University, Satna',
     credentialId: 'AKSU|CS|25|36',
-    period: 'Jan 2025 – June 2025',
-    duration: '6 months',
+    period: 'Jan 2025 – May 2025',
+    duration: '3 months',
     location: 'Satna, Madhya Pradesh',
     description: 'Played a key role in automating CSE department workflows and developing software solutions to streamline academic processes, resulting in significant efficiency improvements.',
     responsibilities: [
