@@ -39,7 +39,7 @@ export default function About() {
     },
     {
       category: 'Web Development',
-      skills: ['HTML5', 'CSS3', 'Responsive Design','Tailwind','BootStrap','Next.js Framework'],
+      skills: ['HTML5', 'CSS3', 'Responsive Design','Tailwind','BootStrap','Next.js Framework', 'React','Node JS'],
       icon: Globe,
       color: 'from-green-500 to-emerald-500'
     },
@@ -63,7 +63,7 @@ export default function About() {
     },
     {
       category: 'Tools & Technologies',
-      skills: ['WordPress', 'Git', 'VS Code', 'Jupyter Notebook'],
+      skills: ['Git','GitHUb', 'BitBucket', 'Jira', 'VS Code', 'Jupyter Notebook'],
       icon: Terminal,
       color: 'from-yellow-500 to-orange-500'
     }

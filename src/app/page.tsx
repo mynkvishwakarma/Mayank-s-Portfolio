@@ -63,7 +63,7 @@ export default function Home() {
   const handleResumeDownload = () => {
     // You can replace this with your actual resume file
     const link = document.createElement('a');
-    link.href = '/resume/Mayank Vishwakarma Resume .pdf'; // Make sure to add your resume file in public folder
+    link.href = '/resume/Mayank Vishwakarma Resume.pdf'; // Make sure to add your resume file in public folder
     link.download = 'Mayank_Vishwakarma_Resume.pdf';
     link.click();
   };
