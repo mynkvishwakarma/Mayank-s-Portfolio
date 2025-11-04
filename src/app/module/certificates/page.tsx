@@ -124,7 +124,30 @@ export default function Certificates() {
     {
       id: 2,
       type: 'experience',
-      title: 'Software Development Intern',
+      title: 'Full Stack Developer Intern',
+      company: 'StartupWord, Pune',
+      credentialId: 'mynkvishwakarma@gmail.com',
+      period: 'October 2025 – Present',
+      duration: '3 months',
+      location: 'Pune, Maharashtra',
+      description: 'Working in StartupWorld real-world project, converting PHP website into Next JS.',
+      responsibilities: [
+        'Developing automation tools for department workflows',
+        'Collaborating with faculty on software solutions',
+        'Maintaining and updating existing systems',
+        'Participating in code reviews and team meetings'
+      ],
+      skills: ['Full Stack Development', 'Automation', 'Problem Solving', 'Team Collaboration'],
+      icon: Code,
+      category: 'work',
+      status: 'current',
+      color: 'from-blue-500 to-cyan-500',
+      certificateUrl: '/certificates/Offer_Letter.pdf'
+    },
+    {
+      id: 3,
+      type: 'experience',
+      title: 'Full Stack Developer Intern',
       company: 'AKS University, Satna',
       credentialId: 'AKSU|CS|25|36',
       period: 'Jan 2025 – May 2025',
@@ -137,7 +160,7 @@ export default function Certificates() {
         'Maintaining and updating existing systems',
         'Participating in code reviews and team meetings'
       ],
-      skills: ['Software Development', 'Automation', 'Problem Solving', 'Team Collaboration'],
+      skills: ['Full Stack Development', 'Automation', 'Problem Solving', 'Team Collaboration'],
       icon: Code,
       category: 'work',
       status: 'completed',
@@ -145,7 +168,7 @@ export default function Certificates() {
       certificateUrl: '/certificates/software-intern.pdf'
     },
     {
-      id: 3,
+      id: 4,
       type: 'experience',
       title: 'Web Development Intern',
       company: 'ApexPlanet',
@@ -163,7 +186,7 @@ export default function Certificates() {
       skills: ['HTML/CSS', 'JavaScript', 'React', 'Node.js', 'Database Design'],
       icon: Code,
       category: 'work',
-      status: 'current',
+      status: 'completed',
       color: 'from-purple-500 to-pink-500',
       certificateUrl: '/certificates/web-intern.pdf'
     }
@@ -171,7 +194,7 @@ export default function Certificates() {
 
   const certificates: Certificate[] = [
     {
-      id: 4,
+      id: 5,
       type: 'certificate',
       title: 'IBM and Design Thinking',
       issuer: 'IBM',
@@ -191,7 +214,7 @@ export default function Certificates() {
       badge: 'ibm'
     },
     {
-      id: 5,
+      id: 6,
       type: 'certificate',
       title: 'Fundamental AI Concepts',
       issuer: 'Microsoft',
@@ -209,7 +232,8 @@ export default function Certificates() {
       status: 'completed',
       color: 'from-green-600 to-teal-600',
       badge: 'microsoft'
-    }
+    },
+    
   ];
 
   const allItems: Item[] = [...experiences, ...certificates];
