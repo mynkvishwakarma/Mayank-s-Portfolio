@@ -125,10 +125,10 @@ export default function Certificates() {
       id: 2,
       type: 'experience',
       title: 'Full Stack Developer Intern',
-      company: 'StartupWord, Pune',
+      company: 'Blue Planet Infosolutions Pvt. Ltd., Pune',
       credentialId: 'mynkvishwakarma@gmail.com',
-      period: 'October 2025 – Present',
-      duration: '3 months',
+      period: 'October 2025 – April 2026',
+      duration: '6 months',
       location: 'Pune, Maharashtra',
       description: 'Working in StartupWorld real-world project, converting PHP website into Next JS.',
       responsibilities: [
