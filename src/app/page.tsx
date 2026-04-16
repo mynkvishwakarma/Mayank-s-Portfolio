@@ -5,8 +5,7 @@ import {
   MapPin, 
   Phone, 
   Mail, 
-  Linkedin, 
-  Github, 
+  ExternalLink,  
   Download,
   MessageCircle,
   Code,
@@ -56,8 +55,8 @@ export default function Home() {
     { icon: MapPin, text: 'Arjun Nagar Pateri, Satna (M.P.)', link: null },
     { icon: Phone, text: '+91 7470955491', link: 'tel:+917470955491' },
     { icon: Mail, text: 'mynkvishwakarma@gmail.com', link: 'mailto:mynkvishwakarma@gmail.com' },
-    { icon: Linkedin, text: 'Mayank Vishwakarma', link: 'https://www.linkedin.com/in/vmynk' },
-    { icon: Github, text: 'mynkvishwakarma', link: 'https://github.com/mynkvishwakarma' }
+    { icon: ExternalLink, text: 'Mayank Vishwakarma', link: 'https://www.linkedin.com/in/vmynk' },
+    { icon: Code, text: 'mynkvishwakarma', link: 'https://github.com/mynkvishwakarma' }
   ];
 
   const handleResumeDownload = () => {
@@ -229,7 +228,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg transition-colors duration-200 text-center font-medium flex items-center justify-center gap-2"
                   >
-                    <Linkedin size={18} />
+                    <ExternalLink size={18} />
                     LinkedIn
                   </a>
                   <a 
@@ -238,7 +237,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="bg-gray-800 hover:bg-gray-900 text-white py-3 px-4 rounded-lg transition-colors duration-200 text-center font-medium flex items-center justify-center gap-2"
                   >
-                    <Github size={18} />
+                    <Code size={18} />
                     GitHub
                   </a>
                 </div>
