@@ -130,7 +130,7 @@ export default function Certificates() {
       period: 'October 2025 – April 2026',
       duration: '6 months',
       location: 'Pune, Maharashtra',
-      description: 'Working in StartupWorld real-world project, converting PHP website into Next JS.',
+      description: 'Working in Blue Planet Infosolutions real-world project, converting SmartCookie PHP website into Next JS.',
       responsibilities: [
         'Developing automation tools for department workflows',
         'Collaborating with faculty on software solutions',
