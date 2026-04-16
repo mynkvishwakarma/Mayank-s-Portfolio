@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { 
   ArrowLeft, 
-  Github, 
   ExternalLink, 
   Calendar,
   Users,
@@ -420,7 +419,7 @@ export default function ProjectDetail() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg transition-all duration-200 hover:scale-105"
                   >
-                    <Github className="w-5 h-5" />
+                    < ExternalLink className="w-5 h-5" />
                     View Code on GitHub
                   </a>
                 )}

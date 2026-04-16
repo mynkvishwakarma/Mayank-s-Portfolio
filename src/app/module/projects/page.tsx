@@ -3,8 +3,7 @@
 import { useState, useEffect, ChangeEvent } from 'react';
 import Link from 'next/link';
 import { 
-  ExternalLink, 
-  Github, 
+  ExternalLink,  
   Calendar,
   Users,
   Code2,
@@ -406,7 +405,7 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="p-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg transition-colors duration-200 flex items-center justify-center"
                       >
-                        <Github className="w-4 h-4" />
+                        < ExternalLink className="w-4 h-4" />
                       </a>
                     )}
                   </div>
