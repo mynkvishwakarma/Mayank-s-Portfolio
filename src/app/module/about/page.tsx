@@ -99,7 +99,7 @@ export default function About() {
       year: '2025 - Present',
       icon: GraduationCap,
       status: 'Current',
-      grade: '--'
+      grade: '7.2 CGPA'
     },
     {
       degree: 'B.Sc. IT',
