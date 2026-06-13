@@ -2,8 +2,8 @@
 
 import { useState, useEffect, ChangeEvent } from 'react';
 import Link from 'next/link';
-import { 
-  ExternalLink,  
+import {
+  ExternalLink,
   Calendar,
   Users,
   Code2,
@@ -211,8 +211,8 @@ export default function Projects() {
   const filteredProjects = projects.filter(project => {
     const matchesCategory = filter === 'all' || project.category === filter;
     const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
+      project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
 
@@ -247,14 +247,14 @@ export default function Projects() {
     <>
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Header Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
               My Projects
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Explore my portfolio of projects ranging from web development to AI/ML and data analytics. 
+              Explore my portfolio of projects ranging from web development to AI/ML and data analytics.
               Each project represents a learning journey and practical application of skills.
             </p>
           </div>
@@ -268,11 +268,10 @@ export default function Projects() {
                   <button
                     key={category.id}
                     onClick={() => setFilter(category.id)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-200 ${
-                      filter === category.id
+                    className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-200 ${filter === category.id
                         ? 'bg-blue-600 text-white shadow-lg transform scale-105'
                         : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
-                    } shadow-sm`}
+                      } shadow-sm`}
                   >
                     <category.icon className="w-4 h-4" />
                     {category.label}
@@ -302,7 +301,7 @@ export default function Projects() {
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {filteredProjects.map((project) => (
-              <div 
+              <div
                 key={project.id}
                 className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700 overflow-hidden group"
               >
@@ -311,14 +310,14 @@ export default function Projects() {
                   {/* Show image only if path is valid, otherwise show fallback */}
                   {isValidImagePath(project.image) ? (
                     <>
-                      <img 
-                        src={project.image} 
+                      <img
+                        src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         onError={(e) => handleImageError(e, project)}
                       />
                       {/* Fallback Gradient Background - hidden by default */}
-                      <div 
+                      <div
                         className={`hidden absolute inset-0 bg-gradient-to-r ${project.fallbackColor}`}
                       >
                         <div className="absolute inset-0 bg-black/20"></div>
@@ -342,7 +341,7 @@ export default function Projects() {
                       </div>
                     </div>
                   )}
-                  
+
                   {/* Status Badge */}
                   <div className="absolute top-4 left-4">
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${statusColors[project.status]}`}>
@@ -374,7 +373,7 @@ export default function Projects() {
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.slice(0, 3).map((tech, index) => (
-                      <span 
+                      <span
                         key={index}
                         className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium"
                       >
@@ -397,7 +396,7 @@ export default function Projects() {
                       <MessageCircle className="w-4 h-4" />
                       View Details
                     </Link>
-                    
+
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}
@@ -449,7 +448,7 @@ export default function Projects() {
           </div>
         </div>
       </div>
-      
+
       <Footer />
     </>
   );

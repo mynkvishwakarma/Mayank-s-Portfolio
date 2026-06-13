@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { 
+import {
   Award,
   Calendar,
   MapPin,
@@ -203,7 +203,7 @@ export default function SoftwareInternAchievement() {
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden mb-8">
             {/* Header with Gradient */}
             <div className={`relative h-4 bg-gradient-to-r ${internshipData.color}`}></div>
-            
+
             <div className="p-8">
               {/* Header Section */}
               <div className="flex items-start justify-between mb-6">
@@ -220,7 +220,7 @@ export default function SoftwareInternAchievement() {
                     </p>
                   </div>
                 </div>
-                
+
                 {/* Status Badge */}
                 <span className="px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
                   {internshipData.status}
@@ -279,7 +279,7 @@ export default function SoftwareInternAchievement() {
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">Technologies & Tools</h3>
                 <div className="flex flex-wrap gap-3">
                   {internshipData.technologies.map((tech, idx) => (
-                    <span 
+                    <span
                       key={idx}
                       className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full font-medium"
                     >
@@ -294,7 +294,7 @@ export default function SoftwareInternAchievement() {
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">Skills Developed</h3>
                 <div className="flex flex-wrap gap-3">
                   {internshipData.skills.map((skill, idx) => (
-                    <span 
+                    <span
                       key={idx}
                       className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full font-medium"
                     >
@@ -313,7 +313,7 @@ export default function SoftwareInternAchievement() {
                   <FileText className="w-5 h-5" />
                   View Internship Certificate
                 </button>
-                
+
                 <button
                   onClick={() => handleDownload(internshipData.certificateUrl, internshipData.title)}
                   className="flex items-center justify-center gap-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 py-3 px-6 rounded-lg transition-colors duration-200 font-medium"
@@ -330,7 +330,7 @@ export default function SoftwareInternAchievement() {
             <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8 text-center">Key Achievements</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {internshipData.achievements.map((achievement, index) => (
-                <div 
+                <div
                   key={index}
                   className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300"
                 >
@@ -360,13 +360,13 @@ export default function SoftwareInternAchievement() {
             <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8 text-center">Recognition & Appreciation</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {appreciationCertificates.map((certificate) => (
-                <div 
+                <div
                   key={certificate.id}
                   className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden group hover:shadow-xl transition-all duration-300"
                 >
                   {/* Header with Gradient */}
                   <div className={`relative h-4 bg-gradient-to-r ${certificate.color}`}></div>
-                  
+
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
@@ -412,7 +412,7 @@ export default function SoftwareInternAchievement() {
                         <FileText className="w-4 h-4" />
                         View Certificate
                       </button>
-                      
+
                       <button
                         onClick={() => handleDownload(certificate.certificateUrl, certificate.title)}
                         className="flex items-center justify-center gap-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 py-2 px-4 rounded-lg transition-colors duration-200 font-medium"

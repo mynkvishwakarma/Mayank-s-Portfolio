@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { 
+import {
   Award,
   Calendar,
   MapPin,
@@ -233,7 +233,7 @@ export default function Certificates() {
       color: 'from-green-600 to-teal-600',
       badge: 'microsoft'
     },
-    
+
   ];
 
   const allItems: Item[] = [...experiences, ...certificates];
@@ -259,14 +259,14 @@ export default function Certificates() {
   // Filter function with proper typing
   const filteredItems = allItems.filter((item: Item) => {
     const matchesCategory = filter === 'all' || item.category === filter;
-    
+
     const searchLower = searchTerm.toLowerCase();
-    const matchesSearch = 
+    const matchesSearch =
       item.title.toLowerCase().includes(searchLower) ||
       (isExperience(item) && item.company.toLowerCase().includes(searchLower)) ||
       (isCertificate(item) && item.issuer.toLowerCase().includes(searchLower)) ||
       item.skills.some(skill => skill.toLowerCase().includes(searchLower));
-    
+
     return matchesCategory && matchesSearch;
   });
 
@@ -321,7 +321,7 @@ export default function Certificates() {
     <>
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300 py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Header Section */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 shadow-lg">
@@ -377,11 +377,10 @@ export default function Certificates() {
                   <button
                     key={category.id}
                     onClick={() => setFilter(category.id)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-200 ${
-                      filter === category.id
+                    className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-200 ${filter === category.id
                         ? 'bg-blue-600 text-white shadow-lg transform scale-105'
                         : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
-                    } shadow-sm`}
+                      } shadow-sm`}
                   >
                     <category.icon className="w-4 h-4" />
                     {category.label}
@@ -412,13 +411,13 @@ export default function Certificates() {
           {/* Timeline Grid */}
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
             {filteredItems.map((item) => (
-              <div 
+              <div
                 key={item.id}
                 className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700 overflow-hidden group"
               >
                 {/* Header with Gradient */}
                 <div className={`relative h-4 bg-gradient-to-r ${item.color}`}></div>
-                
+
                 <div className="p-6">
                   {/* Header Section */}
                   <div className="flex items-start justify-between mb-4">
@@ -435,7 +434,7 @@ export default function Certificates() {
                         </p>
                       </div>
                     </div>
-                    
+
                     {/* Status Badge */}
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${statusColors[item.status]}`}>
                       {item.status}
@@ -495,7 +494,7 @@ export default function Certificates() {
                     <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Skills Gained:</h4>
                     <div className="flex flex-wrap gap-2">
                       {item.skills.map((skill, idx) => (
-                        <span 
+                        <span
                           key={idx}
                           className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium"
                         >
@@ -515,7 +514,7 @@ export default function Certificates() {
                       <FileText className="w-4 h-4" />
                       {getActionButtonText(item)}
                     </button>
-                    
+
                     {/* Download Button - Available for ALL items with certificateUrl */}
                     {item.certificateUrl && (
                       <button
@@ -526,7 +525,7 @@ export default function Certificates() {
                         <Download className="w-4 h-4" />
                       </button>
                     )}
-                    
+
                     {/* External Link for certificates with verification */}
                     {isCertificate(item) && item.verificationUrl && (
                       <a
